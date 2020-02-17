@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Second-page</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
 </head>
 
@@ -23,57 +20,43 @@
 
         }
     </style>
-    <div class="container">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-8">
-            <div
-                style="text-align: center; margin-top: 30%; font-size:3rem; color:white; font-family: 'Acme', sans-serif;  ">
-                Log in to File MSG
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1">
-                        <i class="far fa-envelope"></i>
-                    </span>
-                </div>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                    aria-describedby="basic-addon1">
-            </div>
+    <div>
 
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"></span>
-                </div>
-                <input type="text" class="form-control" placeholder="Password" aria-label="Username"
-                    aria-describedby="basic-addon1">
-            </div>
-
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="basic-addon1"></span>
-                </div>
-                <input type="text" class="form-control" placeholder="Email" aria-label="Username"
-                    aria-describedby="basic-addon1">
-            </div>
-
-            <div class="row col-sm-12" style="padding-left:  20%">
-                <div class="col-sm-5"></div>
-                <button type="button" class="btn btn-info" id=" login" style=" color:rgb(250, 250, 248); "
-                    onclick="Login()">Login</button>
-                <div class="col-sm-5"></div>
-            </div>
-            <script>
-                function Login() {
-                    document.getElementById("#login"), console.log("login click");
-                }
-            </script>
-
+        <div
+            style="text-align: center; margin-top: 25%; font-size:3em; color:white; font-family: 'Acme', sans-serif;  ">
+            Log in to File MSG
+        </div>
+        <div style="text-align: center; margin: 1em;">
+            <input size="30em " type="text" placeholder="Username">
         </div>
 
+        <div style="text-align: center; margin: 1em;">
+            <input size="30em " type="text" placeholder="Email">
+        </div>
 
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2"></div>
+        <div style="text-align: center; margin: 1em;">
+            <input size="30em " type="text" placeholder="Password">
+        </div>
+
     </div>
+
+    <button id="sign-up" style="margin: 0 auto;
+                border: none;
+                cursor: pointer;
+                padding: 0.5em;
+                border-radius: 8px;
+                display: block;
+                background-color: rgb(15, 140, 241);
+                color: beige;
+                position: middle;">Sign up</button>
+
+    <script>
+        function Login() {
+            document.getElementById("#login"), console.log("login click");
+        }
+    </script>
+
+
 </body>
 
 </html>

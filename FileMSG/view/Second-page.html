@@ -7,9 +7,7 @@
     <title>Second-page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
-    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
-    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
 </head>
 
@@ -60,10 +58,15 @@
 
             <div class="row col-sm-12" style="padding-left:  20%">
                 <div class="col-sm-5"></div>
-                <button type="button" class="btn btn-info " id="submit"
-                    style=" color:rgb(250, 250, 248); ">Login</button>
+                <button type="button" class="btn btn-info" id=" login" style=" color:rgb(250, 250, 248); "
+                    onclick="Login()">Login</button>
                 <div class="col-sm-5"></div>
             </div>
+            <script>
+                function Login() {
+                    document.getElementById("#login"), console.log("login click");
+                }
+            </script>
 
         </div>
 

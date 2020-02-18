@@ -1,0 +1,27 @@
+body {
+    background-image: url('background2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+
+};
+
+#sign-up{ margin: 0 auto;
+        border: none;
+        cursor: pointer;
+        padding: 0.5em;
+        border-radius: 8px;
+        display: block;
+        background-color: rgb(15, 140, 241);
+        color: beige;
+        position: middle;
+};
+
+#welcomepagetitle{
+    text-align: center; margin-top: 10%; font-size:2em; color:white;   font-family: 'Fredoka One', cursive;
+};
+
+#welcomepagetext{
+    text-align:center; font-size: 1em; color: white;  font-family:'Indie Flower', cursive;
+};

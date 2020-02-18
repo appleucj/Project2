@@ -13,12 +13,12 @@ app.use(express.static('public'));
 
 
 app.get('/', function (req, res) {
-   
+
   res.render('index');
 });
 
 app.get('/chat', function (req, res) {
-  res.sendFile(__dirname + '/public/index2.html');
+  res.render('chat');
 });
 
 

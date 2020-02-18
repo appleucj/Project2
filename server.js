@@ -1,18 +1,32 @@
-var app = require('express')();
+var express = require('express')
+var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
+var exphbs = require('express-handlebars');
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/public/index.html');
+
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+
+app.use(express.static('public'));
+
+
+app.get('/', function (req, res) {
+  // res.sendFile(__dirname + '/public/index.html');
+  res.render('index');
 });
 
-io.on('connection', function(socket){
-  socket.on('chat message', function(msg){
+app.get('/signup', function (req, res) {
+  res.render('signup');
+});
+
+io.on('connection', function (socket) {
+  socket.on('chat message', function (msg) {
     io.emit('chat message', msg);
   });
 });
 
-http.listen(port, function(){
+http.listen(port, function () {
   console.log('listening on *:' + port);
 });

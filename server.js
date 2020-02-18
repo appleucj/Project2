@@ -13,9 +13,14 @@ app.use(express.static('public'));
 
 
 app.get('/', function (req, res) {
-  // res.sendFile(__dirname + '/public/index.html');
+   
   res.render('index');
 });
+
+app.get('/chat', function (req, res) {
+  res.sendFile(__dirname + '/public/index2.html');
+});
+
 
 app.get('/signup', function (req, res) {
   res.render('signup');

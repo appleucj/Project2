@@ -33,6 +33,14 @@
           $('#messages').append($('<li>').text(msg));
           window.scrollTo(0, document.body.scrollHeight);
         });
+        socket.on('chat message', function(msg){
+
+console.log('Yay, I got a message back from the server: ', msg)
+
+//handle the message however you would like
+$('#messages').append($('<li>').text(msg));
+
+});
       });
     </script>
   </body>

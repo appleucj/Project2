@@ -1,7 +1,10 @@
 const express = require('express');
+var session = require("express-session");
 const path = require('path');
 const http = require('http');
 const socketIO = require('socket.io');
+var passport = require("./config/passport");
+
 // Requiring our models for syncing
 const db = require("./models");
 
@@ -25,10 +28,13 @@ app.get('/', function (req, res) {
 app.get('/signup', function (req, res) {
   res.render('signup');
 });
+
+// We need to use sessions to keep track of our user's login status
+app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
 // =============================================================
-
-app.get("/", (req, res) => res.send("Welcome to our Chat"));
-
+//app.get("/", (req, res) => res.send("Welcome to our Chat"))
 app.post("/api/users", (req, res) => {
   db.User.create(req.body).then(user => {
     res.json(user)
@@ -62,12 +68,14 @@ app.get('/signup', function (req, res) {
   res.render('signup');
 });
 
+require('./routes/html-routes.js')(app)
+require('./routes/api-routes.js')(app)
 
 
 let server = http.createServer(app);
 let io = socketIO(server);
 
-db.sequelize.sync().then(function() {
+db.sequelize.sync().then(function () {
   server.listen(port, () => {
     console.log("App listening on PORT " + port);
   });
@@ -88,14 +96,4 @@ io.on('connection', function (socket) {
     io.emit('new message', msg)
   });
 
-
-
-
 });
-//emit messages
-// io.on('chat message', (socket) => {
-
-// })
-
-
-

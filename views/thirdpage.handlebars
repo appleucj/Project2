@@ -1,0 +1,176 @@
+<head>
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> --}}
+    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/x.y.z/css/bulma.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
+</head>
+
+<div>
+    {{!-- Title --}}
+    <div id="signUpPageTitle"
+        style="text-align: center; margin-top: 10%; font-size:1.5em; color:white; font-family: 'Saira Semi Condensed', sans-serif;  ">
+        BENY
+    </div>
+    {{!-- Message Area --}}
+    <div class="signUpPageInputArea"
+        style="text-align: center; margin: 0.5em;  font-family:'Indie Flower', cursive; color:aliceblue">
+
+        <input class="signupPageInput" style="text-align: center;" size="40em" type="text">
+    </div>
+    <div class="signUpPageInputArea"
+        style="text-align: center; margin: 0.5em;  font-family:'Indie Flower', cursive; color:aliceblue">
+
+        <input class="signupPageInput" style="text-align: center;" size="40em" type="text">
+    </div>
+    <div class="signUpPageInputArea"
+        style="text-align: center; margin: 0.5em;  font-family:'Indie Flower', cursive; color:aliceblue">
+
+        <input class="signupPageInput" style="text-align: center;" size="40em" type="text">
+    </div>
+    <div class="signUpPageInputArea"
+        style="text-align: center; margin: 0.5em;  font-family:'Indie Flower', cursive; color:aliceblue">
+
+        <input class="signupPageInput" style="text-align: center;" size="40em" type="text">
+    </div>
+    <div class="signUpPageInputArea"
+        style="text-align: center; margin: 0.5em;  font-family:'Indie Flower', cursive; color:aliceblue">
+
+        <input class="signupPageInput" style="text-align: center;" size="40em" type="text">
+    </div>
+    <div class="signUpPageInputArea"
+        style="text-align: center; margin: 0.5em;  font-family:'Indie Flower', cursive; color:aliceblue">
+
+        <input class="signupPageInput" style="text-align: center;" size="40em" type="text">
+    </div>
+
+    <div class="row">
+
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12">
+                    <div class="chip">
+                        <img src="D:\Repos\Project2\pic\girl.jpg" alt="Contact Person">
+                        Jane Doe
+                    </div>
+                    <textarea id="textarea1" class="materialize-textarea col s8"></textarea>
+
+                    <label for="textarea1">
+
+                        Textarea
+                        <a href="#!" class="btn waves-effect waves-teal right-align">Send</a>
+                    </label>
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+    {{!-- Bulma --}}
+    {{!-- <article class="media">
+        <figure class="media-left">
+            <p class="image is-64x64">
+                <img src="https://bulma.io/images/placeholders/128x128.png">
+            </p>
+        </figure>
+        <div class="media-content">
+            <div class="content">
+                <p>
+                    <strong>Barbara Middleton</strong>
+                    <br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit
+                    blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
+                    <br>
+                    <small><a>Like</a> · <a>Reply</a> · 3 hrs</small>
+                </p>
+            </div>
+
+            <article class="media">
+                <figure class="media-left">
+                    <p class="image is-64x64">
+                        <img src="https://bulma.io/images/placeholders/128x128.png">
+                    </p>
+                </figure>
+                <div class="media-content">
+                    <div class="field">
+                        <p class="control">
+                            <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                        </p>
+                    </div>
+                    <nav class="level">
+                        <div class="level-left">
+                            <div class="level-item">
+                                <a class="button is-info">Submit</a>
+                            </div>
+                        </div>
+                        <div class="level-right">
+                            <div class="level-item">
+                                <label class="checkbox">
+                                    <input type="checkbox"> Press enter to submit
+                                </label>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </article> --}}
+
+    {{!-- flex box --}}
+    <div class="feedback-form">
+        {{!-- <p>Thanks for reading, and I hope you found this tutorial useful. If you have any questions you'd like
+                    to see answered, or sections elaborated on, drop me a line. I'm always interested in improving this
+                    site.</p>
+                <hr /> --}}
+        <form>
+            <label id="thirdPageName">Name</label>
+            <textarea>
+
+  </textarea>
+            <div class="feedback-form--submit">
+                <button>Submit</button>
+            </div>
+        </form>
+
+    </div>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .feedback-form {
+            background: #ccccc;
+            padding: 0.5rem 1rem 1rem 1rem;
+            border-radius: 2rem 2rem 0rem 0rem;
+        }
+
+        .feedback-form hr {
+            border-color: #000;
+        }
+
+        .feedback-form form {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .feedback-form label {
+            flex-basis: 100%;
+            font-size: 1.5rem;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .feedback-form textarea {
+            flex: 1;
+            font-size: 1rem;
+            padding: 1rem;
+        }
+
+        .feedback-form button {
+            background: #000;
+            color: #fff;
+            border: none;
+            font-size: 1rem;
+            padding: 1rem;
+            border-radius: 1rem;
+
+        }
+    </style>
+
+</div>

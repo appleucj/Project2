@@ -1,21 +1,21 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "Activelover3",
     "database": "customers_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "AriettaPrince009",
+    "password": "Activelover3",
     "database": "database_test",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "production": {
     "username": "root",
-    "password": "AriettaPrince009",
+    "password": "Activelover3",
     "database": "database_production",
     "host": "127.0.0.1",
     "dialect": "mysql"

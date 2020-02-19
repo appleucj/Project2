@@ -1,9 +1,15 @@
-var express = require('express')
-var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+const express = require('express');
+const path = require('path');
+
+const publicPath = path.join(__dirname + '/public/index2.html')
 var port = process.env.PORT || 3000;
+
+var app = express();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 var exphbs = require('express-handlebars');
+
+
 
 
 app.engine('handlebars', exphbs());
@@ -11,6 +17,9 @@ app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
 
+app.listen(port, ()=>{
+  console.log(`Server is running on port ${port}`);
+})
 
 app.get('/', function (req, res) {
    
@@ -27,11 +36,10 @@ app.get('/signup', function (req, res) {
 });
 
 io.on('connection', function (socket) {
-  socket.on('chat message', function (msg) {
-    io.emit('chat message', msg);
-  });
+  //console.log(`we are connected with SOCKEt --> ${socket}`)
 });
 
-http.listen(port, function () {
-  console.log('listening on *:' + port);
-});
+
+// // server.listen(port, function () {
+// //   console.log('listening on *:' + port);
+// });

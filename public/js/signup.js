@@ -12,6 +12,9 @@ $(document).ready(function() {
   signUpForm.on("submit", function(event) {
     event.preventDefault();
     var userData = {
+      firstName: firstNameInput.val().trim(),
+      lastName: lastNameInput.val().trim(),
+      phoneNumber: phoneInput.val().trim(),
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
@@ -20,27 +23,34 @@ $(document).ready(function() {
       return;
     }
     // If we have an email and password, run the signUpUser function
-    signUpUser(userData.email, userData.password);
+    signUpUser(userData.email, userData.password, userData.firstName, userData.lastName, userData.phoneNumber);
     emailInput.val("");
     passwordInput.val("");
+    firstNameInput.val("");
+    lastNameInput.val("");
+    phoneInput.val("");
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function signUpUser(email, password) {
+  function signUpUser(email, password, firstName, lastName, phoneNumber) {
      $.post("/api/signup", {
       email: email,
-      password: password
+      password: password,
+      firstName: firstName,
+      lastName: lastName,
+      phoneNumber: phoneNumber
+
      })
       .then(function(data) {
-        window.location.replace("/members");
+        window.location.replace("/chat");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    $("#alert .msg").text(JSON.stringify(err.responseJSON));
     $("#alert").fadeIn(500);
   }
 });

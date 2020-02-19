@@ -26,6 +26,11 @@ app.get('/signup', function (req, res) {
   res.render('signup');
 });
 
+
+app.get('/thirdpage', function (req, res) {
+  res.render('thirdpage');
+});
+
 io.on('connection', function (socket) {
   socket.on('chat message', function (msg) {
     io.emit('chat message', msg);

@@ -21,36 +21,37 @@ app.use(express.static('public'));
 
 
 
-app.get('/', (req, res) => {
+app.get('/', function(req, res) {
    
   res.render('index');
 });
 
-app.get('/chat', (req, res) => {
+app.get('/chat', function(req, res) {
   res.sendFile(__dirname + '/public/index2.html');
 });
 
 
-app.get('/signup', (req, res) => {
+app.get('/signup', function(req, res)  {
   res.render('signup');
 });
 //consolelog connections
-io.on('connection', (socket) => {
-  console.log('a user connected');
+io.on('connection', function(socket) {
+  //console.log('a user connected');
   socket.on('disconnect', (socket) => {
-    console.log('user disconnected');
-    
+    //console.log('user disconnected');
   })
+
+  socket.on('chat message', function (msg)  {
+    console.log('Hello World from chat message on the server!')
+    socket.emit('new message', msg)
+  });
+  
+
 });
 //emit messages
-io.on('connection', (socket) => {
-  socket.emit('greeting-from-server',{
-    greeting: 'Hello Client'
-  });
-  socket.on('greeting-from-client', (message) => {
-    console.log(message);
-  })
-})
+// io.on('chat message', (socket) => {
+ 
+// })
 
 server.listen(port, ()=>{
   console.log(`Server is running on port ${port}`);

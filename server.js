@@ -34,14 +34,23 @@ app.get('/chat', (req, res) => {
 app.get('/signup', (req, res) => {
   res.render('signup');
 });
-
+//consolelog connections
 io.on('connection', (socket) => {
-  console.log("A new user just connected");
-
+  console.log('a user connected');
   socket.on('disconnect', (socket) => {
-    console.log('User was disconnected');
+    console.log('user disconnected');
+    
   })
 });
+//emit messages
+io.on('connection', (socket) => {
+  socket.emit('greeting-from-server',{
+    greeting: 'Hello Client'
+  });
+  socket.on('greeting-from-client', (message) => {
+    console.log(message);
+  })
+})
 
 server.listen(port, ()=>{
   console.log(`Server is running on port ${port}`);

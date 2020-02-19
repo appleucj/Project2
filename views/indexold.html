@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./login.js">
+</head>
+
+<body>
+    <style>
+        body {
+            background-image: url('background2.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center center;
+
+        }
+    </style>
+
+    <div
+        style="text-align: center; margin-top: 15%; font-size:4em; color:rgb(14, 0, 0);   font-family: 'Fredoka One', cursive;">
+        Welcome to BENY!
+    </div>
+    <p
+        style="text-align:center; margin-top: 3%; font-size: 1.5em; color: rgb(7, 1, 1);  font-family:'Indie Flower', cursive;">
+        BENY is a searchable text messaging application with feature-rich options like easy searching capability, local
+        archiving, and more.
+
+        <button class="signup" type="submit" style="margin: 0 auto; margin-top: 5%;
+        border: none;
+        cursor: pointer;
+        padding: 0.5em;
+        border-radius: 8px;
+        display: block;
+        background-color: rgb(15, 140, 241);
+        color: beige;
+        position: middle" onclick="goToSignUpForm()">Sign up today!</button>
+        <!-- how do we send this user to the signupform page using the above button? -->
+        <script>
+            function goToSignUpForm() {
+                document.getElementById(".signup"), console.log("signup click");
+            }
+        </script>
+
+
+</body>
+
+</html>

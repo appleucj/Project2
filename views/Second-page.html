@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Second-page</title>
     <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    <link href="./signup.js">
 </head>
-
 <body>
-
     <style>
         body {
             background-image: url('background2.jpg');
@@ -17,45 +16,39 @@
             background-attachment: fixed;
             background-size: cover;
             background-position: center center;
-
-        }
+            }
     </style>
-    <div>
-
-        <div
-            style="text-align: center; margin-top: 25%; font-size:3em; color:white; font-family: 'Acme', sans-serif;  ">
-            Log in to File MSG
-        </div>
-        <div style="text-align: center; margin: 1em;">
+    <div
+        style="text-align: center; margin-top: 15%; font-size:4em; color:rgb(14, 0, 0);   font-family: 'Fredoka One', cursive;">
+        Log in to BENY!
+    </div>
+    <!-- <div style="text-align: center; margin: 1em;">
             <input size="30em " type="text" placeholder="Username">
-        </div>
+        </div> -->
 
-        <div style="text-align: center; margin: 1em;">
-            <input size="30em " type="text" placeholder="Email">
-        </div>
-
-        <div style="text-align: center; margin: 1em;">
-            <input size="30em " type="text" placeholder="Password">
-        </div>
-
+    <div style="text-align: center; margin: 1em;">
+        <input id="#email-input" size="30em " type="text" placeholder="Email">
     </div>
 
-    <button id="sign-up" style="margin: 0 auto;
-                border: none;
-                cursor: pointer;
-                padding: 0.5em;
-                border-radius: 8px;
-                display: block;
-                background-color: rgb(15, 140, 241);
-                color: beige;
-                position: middle;"
-                onclick="signupclick()">
-                    Create Account
-    </button>
+    <div style="text-align: center; margin: 1em;">
+        <input id="input#password-input" size="30em " type="text" placeholder="Password">
+    </div>
 
+    </div>
+    <form action="">
+        <button class="signup" style="margin: 0 auto;
+                    border: none;
+                    cursor: pointer;
+                    padding: 0.5em;
+                    border-radius: 8px;
+                    display: block;
+                    background-color: rgb(15, 140, 241);
+                    color: beige;
+                    position: middle;" onclick="signupclick()">login</button>
+    </form>
     <script>
         function signupclick() {
-            document.getElementById("#login"), console.log("login click");
+            document.getElementById(".signup"), console.log("login click");
         }
     </script>
 

@@ -32,6 +32,7 @@ $(document).ready(function() {
     $.post("/api/signup", {
       email: email,
       password: password
+      // console.log("hello");
     })
       .then(function(data) {
         window.location.replace("/members");

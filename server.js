@@ -9,8 +9,7 @@ const publicPath = path.join(__dirname + '/public/index2.html')
 const port = process.env.PORT || 3000;
 
 let app = express();
-let server = http.createServer(app);
-let io = socketIO(server);
+
 var exphbs = require('express-handlebars');
 
 // Sets up the Express app to handle data parsing
@@ -19,19 +18,16 @@ app.use(express.json());
 // Static directory
 
 // =============================================================
-app.get("/", (req, res) => res.send("Welcome to our Chat"))
+app.get("/", (req, res) => res.send("Welcome to our Chat"));
+
 app.post("/api/users", (req, res) => {
-db.User.create(req.body).then(user => {
-  res.json(user)
-})
+  db.User.create(req.body).then(user => {
+    res.json(user)
+  })
 });
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync().then(function() {
-  app.listen(port, function() {
-    console.log("App listening on PORT " + port);
-  });
-});
+
 
 
 
@@ -56,6 +52,18 @@ app.get('/chat', function(req, res) {
 app.get('/signup', function(req, res)  {
   res.render('signup');
 });
+
+
+
+let server = http.createServer(app);
+let io = socketIO(server);
+
+db.sequelize.sync().then(function() {
+  server.listen(port, () => {
+    console.log("App listening on PORT " + port);
+  });
+});
+
 //consolelog connections
 io.on('connection', function(socket) {
   io.emit('new message','a user is connected')
@@ -65,7 +73,7 @@ io.on('connection', function(socket) {
     //console.log('user disconnected');
   })
 
-  socket.on('chat message', function (msg)  {
+  socket.on('chat message', function(msg)  {
     //add new message to database
     console.log('Hello World from chat message on the server!')
     io.emit('new message', msg)
@@ -79,5 +87,6 @@ io.on('connection', function(socket) {
 // io.on('chat message', (socket) => {
  
 // })
+
 
 

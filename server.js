@@ -58,15 +58,20 @@ app.get('/signup', function(req, res)  {
 });
 //consolelog connections
 io.on('connection', function(socket) {
+  io.emit('new message','a user is connected')
   //console.log('a user connected');
   socket.on('disconnect', (socket) => {
+    io.emit('new message', 'some user disconnected')
     //console.log('user disconnected');
   })
 
   socket.on('chat message', function (msg)  {
+    //add new message to database
     console.log('Hello World from chat message on the server!')
-    socket.emit('new message', msg)
+    io.emit('new message', msg)
   });
+
+  
   
 
 });

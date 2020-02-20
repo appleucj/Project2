@@ -40,7 +40,6 @@ $(document).ready(function() {
       firstName: firstName,
       lastName: lastName,
       phoneNumber: phoneNumber
-
      })
       .then(function(data) {
         window.location.replace("/chat");

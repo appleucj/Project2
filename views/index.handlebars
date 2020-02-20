@@ -1,27 +1,27 @@
 <style>
     body {
-        background-image: url('background2.jpg');
+        background-image: url('background.jpg');
+        background-color:rgb(76, 132, 165);
         background-repeat: no-repeat;
         background-attachment: fixed;
-        background-size: cover;
-        background-position: center center;
+        background-size: contain;
+        background-position: top, center;
 
     }
 </style>
-<div>
-    <div id="welcomepagetitle"
-        style="text-align: center; margin-top: 10%; font-size:2em; color:white;   font-family: 'Fredoka One', cursive;">
-        Welcome to
-        BENY!
-    </div>
-    <br>
-    <p id="welcomepagetext"
-        style="text-align:center; font-size: 1em; color: white;  font-family:'Indie Flower', cursive;">
-        Searchable text
-        messaging application easily to archiving, emailing chats and search using filters.</p>
-    <br>
-    <br>
-    <button id="sign-up" style="margin: 0 auto;
+<div style="margin-right: 5%"> 
+    <p style="text-align:right; color:rgb(0, 0, 0)"><a style="color:rgb(0, 0, 0)" href="/login">LOGIN</a></p>
+</div>
+
+<div style="text-align: center; margin-top: 15%; font-size:4em; color:rgb(0, 0, 0);   font-family: 'Fredoka One', cursive;">
+   Welcome to BENY!
+</div>
+<div style="padding-left: 10%; padding-right: 10%">
+<p style="text-align: center; margin-top: 3%; font-size: 1.5em; color: black;  font-family:'Indie Flower', cursive;">
+       BENY is a searchable text messaging application with feature-rich options like easy searching capability, local archiving, and more.</p>
+</div>
+<button type="submit" id="signup" style="margin: 0 auto;
+        margin-top: 10%;
         border: none;
         cursor: pointer;
         padding: 0.5em;
@@ -29,17 +29,17 @@
         display: block;
         background-color: rgb(15, 140, 241);
         color: beige;
-        position: middle;" onclick="creatAccountClick()">
-        Create Account
+        position: middle;" 
+        onclick="signUp()">
+        Click here to create an account today!
     </button>
 
 
-    <script>
-        function creatAccountClick() {
-            //document.getElementById("sign-up");
-            //console.log("sign-Up click");
-            window.location.href = "/signup";
-
+<script>
+    function signUp() {
+        {{!-- document.getElementById("#sign-up");
+        console.log("sign-Up click"); --}}
+        window.location.href = "/signup";
         }
     </script>
 </div>

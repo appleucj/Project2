@@ -6,14 +6,14 @@
   <style>
     /* background */
 
-    body {
+    /* body {
       background-image: url('background2.jpg');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
       background-position: center center;
 
-    }
+    } */
 
 
     * {
@@ -46,8 +46,10 @@
       border: 0;
       padding: 10px;
       width: 90%;
-      margin-right: .5%;
-      border-radius: 1em;
+      /* margin-right: .5%; */
+      border-radius: .5em;
+      border: .25em solid black;
+      margin: 0, auto;
     }
 
     form button {
@@ -55,8 +57,9 @@
       width: 9%;
       background: rgb(130, 224, 255);
       border: none;
-      padding: 0.5rem;
-      border-radius: 1em;
+      padding: 0.75rem;
+      border-radius: .25em;
+      margin-left: .5rem;
     }
 
     #messages {
@@ -80,10 +83,13 @@
 </head>
 
 <body>
+  <div style="margin-right: 5%; margin-top: 1%;"> 
+    <p style="text-align:right; color:rgb(0, 0, 0);"><a style="color:rgb(155, 154, 154)"href="/logout">Logout</a></p>
+</div>
   <div class="container">
     <ul id="messages"></ul>
     <form action="" id="chatform">
-      <input id="m" autocomplete="off" /><button>Send</button>
+      <input id="m" autocomplete="off" placeholder="type your message here!" /><button>Send</button>
     </form>
     <script src='/socket.io/socket.io.js'></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>

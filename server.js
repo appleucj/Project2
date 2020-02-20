@@ -19,6 +19,16 @@ var exphbs = require('express-handlebars');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Static directory
+// ????????????
+app.get('/', function (req, res) {
+  // res.sendFile(__dirname + '/public/index.html');
+  res.render('index');
+});
+
+app.get('/signup', function (req, res) {
+  res.render('signup');
+});
+
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
@@ -44,17 +54,17 @@ app.use(express.static('public'));
 
 
 
-app.get('/', function(req, res) {
-   
+app.get('/', function (req, res) {
+
   res.render('index');
 });
 
-app.get('/chat', function(req, res) {
+app.get('/chat', function (req, res) {
   res.sendFile(__dirname + '/public/index2.html');
 });
 
 
-app.get('/signup', function(req, res)  {
+app.get('/signup', function (req, res) {
   res.render('signup');
 });
 
@@ -65,22 +75,22 @@ require('./routes/api-routes.js')(app)
 let server = http.createServer(app);
 let io = socketIO(server);
 
-db.sequelize.sync().then(function() {
+db.sequelize.sync().then(function () {
   server.listen(port, () => {
     console.log("App listening on PORT " + port);
   });
 });
 
 //consolelog connections
-io.on('connection', function(socket) {
-  io.emit('new message','a user is connected')
+io.on('connection', function (socket) {
+  io.emit('new message', 'a user is connected')
   //console.log('a user connected');
   socket.on('disconnect', (socket) => {
     io.emit('new message', 'some user disconnected')
     //console.log('user disconnected');
   })
 
-  socket.on('chat message', function(msg)  {
+  socket.on('chat message', function (msg) {
     //add new message to database
     console.log('Hello World from chat message on the server!')
     io.emit('new message', msg)

@@ -1,0 +1,73 @@
+<style>
+    body {
+        background-image: url('background2.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center center;
+
+    }
+</style>
+<div style="margin-right: 5%";> 
+    <p style="text-align:right; color:rgb(255, 255, 255)"><a style="color:rgb(255, 255, 255)"href="/login">Login here</a></p>
+</div>
+<div>
+
+    <div id="signUpPageTitle"
+        style="text-align: center; margin-top: 10%; font-size:1.5em; color:white; font-family: 'Saira Semi Condensed', sans-serif;  ">
+        Please Provide Some Information About Yourself
+    </div>
+    <div class="signUpPageInputArea"
+        style="text-align: center; margin: 1.5em;  font-family:'Indie Flower', cursive; color:aliceblue">
+        {{!-- First Name: --}}
+        <input class="signupPageInput" style="border-radius:5em; text-align: center;" size="30em" type="text"
+            placeholder="FirstName">
+    </div>
+    <div class="signUpPageInputArea"
+        style="text-align: center; margin: 1.5em;  font-family:'Indie Flower', cursive; color:aliceblue; ">
+        {{!-- Last Name: --}}
+        <input class="signupPageInput" style="border-radius:5em; text-align: center;" size="30em" type="text"
+            placeholder="LastName">
+    </div>
+    <div class="signUpPageInputArea"
+        style="text-align: center; margin: 1.5em; font-family:'Indie Flower', cursive; color:aliceblue">
+        {{!-- Email: --}}
+        <input class="signupPageInput" style="border-radius:5em; text-align: center;" size="30em" type="text"
+            placeholder="Email">
+    </div>
+    <div class="signUpPageInputArea"
+        style="text-align: center; margin: 1.5em; font-family:'Indie Flower', cursive; color:aliceblue">
+        {{!-- Phone: --}}
+        <input class="signupPageInput" style="border-radius:5em; text-align: center;" size="30em" type="text"
+            placeholder="Phone">
+    </div>
+    <div id="setPasswordInputArea"
+        style="text-align: center; margin-top: 6em; font-family:'Indie Flower', cursive; color:aliceblue">
+        {{!-- Set Password: --}}
+        <input class="signupPageInput" style="border-radius:5em; text-align: center;" size="30em"
+            placeholder="Set Password">
+    </div>
+    <div class="signUpPageInputArea"
+        style="text-align: center; margin: 1.5em; font-family:'Indie Flower', cursive; color:aliceblue">
+        {{!-- Confirm Password: --}}
+        <input class="signupPageInput" style="border-radius:5em; text-align: center;" size="30em"
+            placeholder="Confirm Password">
+
+    </div>
+
+    <button onclick="signUpClick()" class="sign-up" style="margin: 0 auto;
+                border: none;
+                cursor: pointer;
+                padding: 0.5em;
+                border-radius: 8px;
+                display: block;
+                background-color: rgb(15, 140, 241);
+                color: beige;
+                position: middle;">Sign up</button>
+
+
+    <script>
+        function signUpClick() {
+            window.location.href = "http://localhost:3000/chat";
+        }
+    </script>

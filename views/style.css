@@ -1,13 +1,13 @@
-body {
-  background-image: url("background2.jpg");
+/* body {
+  background-image: url("background.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center center;
-}
+} */
 /* first page */
 /* wilcomepage button */
-#sign-up {
+#signup {
   margin: 0 auto;
   border: none;
   cursor: pointer;

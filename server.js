@@ -4,7 +4,7 @@ const path = require('path');
 const http = require('http');
 const socketIO = require('socket.io');
 var passport = require("./config/passport");
-
+var compression = require('compression')
 // Requiring our models for syncing
 const db = require("./models");
 
@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 let app = express();
 
 var exphbs = require('express-handlebars');
-
+app.use(compression({ filter: shouldCompress }))
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
